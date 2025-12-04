@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -5,10 +6,38 @@ __pycache__/
 .Python
 env/
 venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
 .env
+.env.local
+
+# Database
 *.sqlite3
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Наши файлы с музыкой и QR-кодами
 static/audio/*
 static/qr_codes/*
 !static/audio/.gitkeep
 !static/qr_codes/.gitkeep
+
+# Загрузки
+uploads/
