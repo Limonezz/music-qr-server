@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ song.title }} - {{ song.artist }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .player-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .album-art {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .song-info {
+            margin-bottom: 30px;
+        }
+        
+        .song-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .song-artist {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        audio {
+            width: 100%;
+            outline: none;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+        
+        .play-count {
+            color: #888;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .qr-hint {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="album-art">
+            ♫
+        </div>
+        
+        <div class="song-info">
+            <div class="song-title">{{ song.title }}</div>
+            <div class="song-artist">{{ song.artist }}</div>
+        </div>
+        
+        <div class="audio-player">
+            <audio controls autoplay>
+                <source src="{{ audio_url }}" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио элемент.
+            </audio>
+        </div>
+        
+        <div class="play-count">
+            Прослушиваний: {{ song.play_count }}
+        </div>
+        
+        <div class="qr-hint">
+            Эта музыка доступна только по QR-коду. 
+            Не делитесь этой ссылкой с другими.
+        </div>
+    </div>
+</body>
+</html>
